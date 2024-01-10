@@ -1,6 +1,7 @@
 import RightMenu from "../../components/menu";
 import TaskScheduler from "../../components/taskScheduler";
 import NHTChart from "./chart";
+import DataVisualization from "./visualizations";
 
 const Dashboard = () => {
   return (
@@ -8,6 +9,7 @@ const Dashboard = () => {
       <div className="flex flex-col gap-8">
         <TaskScheduler />
         <NHTChart />
+        <DataVisualization />
       </div>
 
       <div className="bg-bgBlackMedium py-5 px-5">

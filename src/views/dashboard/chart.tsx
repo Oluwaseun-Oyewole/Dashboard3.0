@@ -32,9 +32,49 @@ const NHTChart = () => {
       data: [120, 320, 310, 270, 220, 200, 220, 280, 350, 320, 280, 180, 140],
     },
   ];
+  const annotations = {
+    xaxis: [
+      {
+        x: 200,
+        borderColor: "#6F6F76",
+        label: {
+          text: "",
+          style: {
+            color: "#FF5733",
+          },
+        },
+        offset: 1,
+      },
+
+      {
+        x: 400,
+        borderColor: "#6F6F76",
+        label: {
+          text: "",
+          style: {
+            color: "#FF5733",
+          },
+        },
+        offset: 4,
+        image: "",
+      },
+
+      {
+        x: 700,
+        borderColor: "#6F6F76",
+        label: {
+          text: "",
+          style: {
+            color: "#FF5733",
+          },
+        },
+        offset: 6,
+      },
+    ],
+  };
 
   return (
-    <div className="bg-bgBlackMedium py-5 px-5">
+    <div className="bg-bgBlackMedium py-5 px-5 rounded-lg">
       <div className="flex items-center justify-between">
         <Typography
           type="p"
@@ -51,6 +91,7 @@ const NHTChart = () => {
         categories={months}
         curve="smooth"
         yAxisLabel
+        annotations={annotations}
       />
     </div>
   );

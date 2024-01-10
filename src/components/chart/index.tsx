@@ -30,6 +30,7 @@ type Props = {
   label?: Array<string>;
   curve?: TCurve | TCurve[];
   showDownloads?: boolean;
+  annotations?: any;
 };
 
 export const CustomChart: FC<Props> = ({
@@ -47,6 +48,7 @@ export const CustomChart: FC<Props> = ({
   curve,
   showDownloads,
   stacked,
+  annotations,
 }) => {
   const { isDarkMode } = useTheme();
 
@@ -124,53 +126,7 @@ export const CustomChart: FC<Props> = ({
       colors: colors,
     },
 
-    annotations: {
-      xaxis: [
-        {
-          x: 200, // Y-coordinate where the annotation line should be placed
-          borderColor: "#6F6F76", // Color of the annotation line
-          label: {
-            text: "", // Label text
-            style: {
-              color: "#FF5733", // Color of the label text
-            },
-          },
-          offset: 1,
-
-          image: {
-            width: 50, // Width of the image
-            height: 50, // Height of the image
-            path: "./alert.svg", // Path to your image file
-          },
-        },
-
-        {
-          x: 400, // Y-coordinate where the annotation line should be placed
-          borderColor: "#6F6F76", // Color of the annotation line
-          label: {
-            text: "", // Label text
-            style: {
-              color: "#FF5733", // Color of the label text
-            },
-          },
-          offset: 4,
-          image: "",
-        },
-
-        {
-          x: 700, // Y-coordinate where the annotation line should be placed
-          borderColor: "#6F6F76", // Color of the annotation line
-          label: {
-            text: "", // Label text
-            style: {
-              color: "#FF5733", // Color of the label text
-            },
-          },
-          offset: 6,
-          image: "",
-        },
-      ],
-    },
+    annotations: annotations,
     // title: {
     //   text: "Dashboard",
 
@@ -199,16 +155,21 @@ export const CustomChart: FC<Props> = ({
     },
     grid: {
       show: showGrid ?? true,
-      strokeDashArray: 5,
+      strokeDashArray: 0,
+      borderColor: "#212121",
+      opacity: 0.3,
       yaxis: {
         lines: {
-          show: false,
-          colors: "green",
+          show: true,
+          colors: "#000",
+          style: {
+            colors: "red",
+          },
         },
       },
       xaxis: {
         lines: {
-          show: false,
+          show: true,
         },
         labels: {
           show: false,
@@ -231,6 +192,12 @@ export const CustomChart: FC<Props> = ({
           offsetY: 5,
         },
       },
+      row: {
+        opacity: 0.3,
+      },
+      column: {
+        opacity: 0.2,
+      },
     },
     dataLabels: {
       enabled: false,
@@ -247,6 +214,58 @@ export const CustomChart: FC<Props> = ({
       curve: curve,
     },
     colors: colors,
+    fontFamily: "Poppins",
+    plotOptions: {
+      fontFamily: "Poppins",
+      radialBar: {
+        inverseOrder: false,
+        fontFamily: "Poppins",
+        offsetX: 0,
+        offsetY: 0,
+        hollow: {
+          margin: 5,
+          size: "25%",
+          background: "transparent",
+          fontFamily: "Poppins",
+        },
+        track: {
+          show: true,
+          background: "#6F6F76",
+          fontFamily: "Poppins",
+          opacity: 0.3,
+        },
+        dataLabels: {
+          show: true,
+          name: {
+            show: true,
+            fontSize: "10px",
+            fontFamily: "Poppins",
+            fontWeight: 400,
+            color: undefined,
+            offsetY: -10,
+          },
+          value: {
+            show: true,
+            fontSize: "12px",
+            fontFamily: "Poppins",
+            fontWeight: 400,
+            color: "white",
+            offsetY: 16,
+            formatter: function (val: number) {
+              return val + "%";
+            },
+          },
+          // total: {
+          //   show: false,
+          //   label: "Total",
+          //   color: "#FFF",
+          //   fontSize: "16px",
+          //   fontFamily: "Poppins",
+          //   fontWeight: 600,
+          // },
+        },
+      },
+    },
   };
 
   return (
