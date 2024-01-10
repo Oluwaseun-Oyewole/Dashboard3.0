@@ -1,14 +1,7 @@
-import Customer from "../assets/svg/totalCustomer.svg";
-import Order from "../assets/svg/totalOrder.svg";
-import Product from "../assets/svg/totalProduct.svg";
-import Sales from "../assets/svg/totalSales.svg";
-
-export const keyConstants = {
-  EXPIRY_TOKEN_TIME: "auth_expiry",
-  EXPIRE_AUTH_TOKEN_TIME: "expire-auth-token",
-  AUTH_TOKEN: "auth_key",
-  DEFAULT_PAGE_SIZE: 10,
-};
+import Call from "../assets/svg/call.svg";
+import Check from "../assets/svg/check.svg";
+import Mic from "../assets/svg/mic.svg";
+import Notification from "../assets/svg/notification.svg";
 
 type PageTitle = {
   [key: string]: string;
@@ -25,70 +18,94 @@ export const PageTitle: PageTitle = {
   signOut: "signOut",
 };
 
-export const DashboardCard = [
+export const TaskScheduleDetails = [
   {
-    id: 1,
-    title: "Total Sales",
-    amount: "$1K",
-    percentage: "+8% from yesterday",
-    image: Sales,
-  },
-  {
-    id: 2,
-    title: "Order",
-    amount: "$512",
-    percentage: "+5% from yesterday",
-    image: Order,
-  },
-  {
-    id: 3,
-    title: "Product Sold",
-    amount: "$5",
-    percentage: "+1,2% from yesterday",
-    image: Product,
-  },
-  {
-    id: 4,
-    title: "New Customer",
-    amount: "$8",
-    percentage: "+1,2% from yesterday",
-    image: Customer,
-  },
-];
-
-export const Products = [
-  {
-    index: "#",
-    title: "Name",
-    popularity: "Popularity",
-    sales: "Sales",
+    taskName: "Q2 Planning",
+    time: "11:00 PM Wed",
+    check: Check,
+    noti: Notification,
   },
 
   {
-    index: "01",
-    title: "Home Decor Range",
-    popularity: "75%",
-    sales: "45%",
+    taskName: "Carl BRD 38 years",
+    todo: "Send mail with congratulations",
+    check: Check,
+    call: Call,
   },
 
   {
-    index: "02",
-    title: "Disney Princess Pink Bag 18",
-    popularity: "65%",
-    sales: "29%",
+    taskName: "Meeting With Jonathan",
+    time: "02:30 PM Wed",
+    check: Check,
+    mic: Mic,
   },
 
   {
-    index: "03",
-    title: "Bathroom Essentials",
-    popularity: "55%",
-    sales: "18%",
+    taskName: "Call To Micheal",
+    time: "03:30 PM Wed",
+    check: Check,
+    call: Call,
+  },
+  {
+    taskName: "Talk To Dolapo",
+    time: "02:30 PM Wed",
+    todo: "Check all task for last week",
+    check: Check,
+    call: Call,
+  },
+  {
+    taskName: "Meeting With James",
+    time: "05:30 PM Wed",
+    check: Check,
+    call: Call,
   },
 
   {
-    index: "04",
-    title: "Apple Smartwatches",
-    popularity: "30%",
-    sales: "25%",
+    taskName: "Meeting With Donald",
+    time: "06:30 PM Wed",
+    todo: "Talk about work life balance in the meeting",
+    check: Check,
+    call: Call,
+  },
+  {
+    taskName: "Carl BRD 38 years",
+    todo: "Send mail with congratulations",
+    check: Check,
+    call: Call,
+  },
+
+  {
+    taskName: "Meeting With Jonathan",
+    time: "02:30 PM Wed",
+    check: Check,
+    mic: Mic,
+  },
+
+  {
+    taskName: "Call To Micheal",
+    time: "03:30 PM Wed",
+    check: Check,
+    call: Call,
+  },
+  {
+    taskName: "Talk To Dolapo",
+    time: "02:30 PM Wed",
+    todo: "Check all task for last week",
+    check: Check,
+    call: Call,
+  },
+  {
+    taskName: "Meeting With James",
+    time: "05:30 PM Wed",
+    check: Check,
+    call: Call,
+  },
+
+  {
+    taskName: "Meeting With Donald",
+    time: "06:30 PM Wed",
+    todo: "Talk about work life balance in the meeting",
+    check: Check,
+    call: Call,
   },
 ];

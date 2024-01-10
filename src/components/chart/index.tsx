@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { FC } from "react";
 import Chart from "react-apexcharts";
+import { useTheme } from "../../context";
 
 type TCurve =
   | "smooth"
@@ -47,6 +48,8 @@ export const CustomChart: FC<Props> = ({
   showDownloads,
   stacked,
 }) => {
+  const { isDarkMode } = useTheme();
+
   const yaxisOptions = {
     show: true,
     labels: {
@@ -58,10 +61,6 @@ export const CustomChart: FC<Props> = ({
         fontWeight: 300,
         fontFamily: "Poppins",
       },
-
-      // align: "right",
-      // minWidth: 0,
-      // maxWidth: 160,
       formatter: (value: any) => {
         return type !== "line" && type !== "area" && value > 0
           ? `${value}K`
@@ -92,17 +91,13 @@ export const CustomChart: FC<Props> = ({
           reset: false,
         },
       },
-      selection: {
-        enabled: true,
-        stroke: {},
-      },
-      background: "#FFF",
-      dropShadow: {
-        enabled: true,
-        blur: 5,
-        opacity: 0.2,
-        color: "grey",
-      },
+      background: isDarkMode ? "#2C2C2C" : "#FFF",
+      // dropShadow: {
+      //   enabled: true,
+      //   blur: 5,
+      //   opacity: 0.2,
+      //   color: "grey",
+      // },
       stacked: stacked,
     },
     labels: label,
@@ -111,8 +106,10 @@ export const CustomChart: FC<Props> = ({
       labels: {
         show: xaxisLabel ?? true,
         style: {
+          colors: "gray",
+          fontSize: "13px",
+          fontWeight: 300,
           fontFamily: "Poppins",
-          color: "#fff",
         },
       },
       axisBorder: {
@@ -126,9 +123,71 @@ export const CustomChart: FC<Props> = ({
     fill: {
       colors: colors,
     },
+
+    annotations: {
+      xaxis: [
+        {
+          x: 200, // Y-coordinate where the annotation line should be placed
+          borderColor: "#6F6F76", // Color of the annotation line
+          label: {
+            text: "", // Label text
+            style: {
+              color: "#FF5733", // Color of the label text
+            },
+          },
+          offset: 1,
+
+          image: {
+            width: 50, // Width of the image
+            height: 50, // Height of the image
+            path: "./alert.svg", // Path to your image file
+          },
+        },
+
+        {
+          x: 400, // Y-coordinate where the annotation line should be placed
+          borderColor: "#6F6F76", // Color of the annotation line
+          label: {
+            text: "", // Label text
+            style: {
+              color: "#FF5733", // Color of the label text
+            },
+          },
+          offset: 4,
+          image: "",
+        },
+
+        {
+          x: 700, // Y-coordinate where the annotation line should be placed
+          borderColor: "#6F6F76", // Color of the annotation line
+          label: {
+            text: "", // Label text
+            style: {
+              color: "#FF5733", // Color of the label text
+            },
+          },
+          offset: 6,
+          image: "",
+        },
+      ],
+    },
+    // title: {
+    //   text: "Dashboard",
+
+    //   style: {
+    //     color: isDarkMode ? "white" : "",
+    //     fonFamily: "Poppins",
+    //     fontWeight: 200,
+    //   },
+
+    // },
+
     legend: {
       show: true,
-      // position: "top",
+      fonFamily: "Poppins",
+      labels: {
+        colors: "whitesmoke",
+      },
     },
     states: {
       hover: {
@@ -143,7 +202,8 @@ export const CustomChart: FC<Props> = ({
       strokeDashArray: 5,
       yaxis: {
         lines: {
-          show: true,
+          show: false,
+          colors: "green",
         },
       },
       xaxis: {
@@ -151,11 +211,24 @@ export const CustomChart: FC<Props> = ({
           show: false,
         },
         labels: {
+          show: false,
+          style: {},
+        },
+        axisBorder: {
           show: true,
-          style: {
-            fontSize: "13px",
-            fontWeight: 300,
-          },
+          color: "red",
+          height: 1,
+          width: "10%",
+          offsetX: 2,
+          offsetY: 2,
+        },
+        axisTicks: {
+          show: true,
+          borderType: "solid",
+          color: "#000",
+          height: 6,
+          offsetX: 5,
+          offsetY: 5,
         },
       },
     },
