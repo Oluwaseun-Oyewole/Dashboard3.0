@@ -44,6 +44,10 @@ const DataVisualization = () => {
     "Nov",
   ];
 
+  const annotations = {
+    xaxis: [],
+  };
+
   return (
     <div className="flex gap-5 flex-col">
       <div className="flex flex-col lg:flex-row w-full justify-between gap-4">
@@ -150,6 +154,7 @@ const DataVisualization = () => {
             label={[]}
             yAxisLabel
             showLines={false}
+            annotations={annotations}
           />
         </div>
       </div>

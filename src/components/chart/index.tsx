@@ -32,6 +32,7 @@ type Props = {
   showDownloads?: boolean;
   annotations?: any;
   showLines?: boolean;
+  isAnnotate?: boolean;
 };
 
 export const CustomChart: FC<Props> = ({
@@ -95,12 +96,6 @@ export const CustomChart: FC<Props> = ({
         },
       },
       background: isDarkMode ? "#2C2C2C" : "#FFF",
-      // dropShadow: {
-      //   enabled: true,
-      //   blur: 5,
-      //   opacity: 0.2,
-      //   color: "grey",
-      // },
       stacked: stacked,
     },
     labels: label,
