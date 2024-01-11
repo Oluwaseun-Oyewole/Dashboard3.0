@@ -44,7 +44,7 @@ const tabProps = {
 
 const RightMenu = () => {
   return (
-    <div>
+    <div className="py-5 px-5 sticky left-0 top-0 h-screen bg-bgBlackMedium">
       <Tabs
         {...tabProps}
         defaultActiveKey="1"

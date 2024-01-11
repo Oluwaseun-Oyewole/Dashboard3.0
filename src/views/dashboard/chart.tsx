@@ -6,7 +6,6 @@ import { useTheme } from "../../context";
 const NHTChart = () => {
   const { isDarkMode } = useTheme();
   const months = [
-    "Now",
     "Jan",
     "Feb",
     "Mar",
@@ -74,8 +73,10 @@ const NHTChart = () => {
   };
 
   return (
-    <div className="bg-bgBlackMedium py-5 px-5 rounded-lg">
-      <div className="flex items-center justify-between">
+    <div
+      className={`rounded-lg ${isDarkMode ? "bg-bgBlackMedium" : "bg-white"}`}
+    >
+      <div className={`flex items-center justify-between px-5 py-6 `}>
         <Typography
           type="p"
           children="Dashboard"
@@ -92,6 +93,7 @@ const NHTChart = () => {
         curve="smooth"
         yAxisLabel
         annotations={annotations}
+        showLines={isDarkMode && true}
       />
     </div>
   );

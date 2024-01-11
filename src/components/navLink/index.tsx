@@ -37,7 +37,7 @@ export const NavLinkComponent = ({ routesArray, className }: MenuProps) => {
     <div
       className={`${
         isDarkMode ? "bg-bgBlackMedium" : "bg-white"
-      } h-screen sticky top-0 left-0`}
+      }   sticky top-0 bottom-0 left-0 `}
     >
       <div className="flex flex-col justify-between h-screen items-center py-8">
         <ul

@@ -8,8 +8,8 @@ const DashboardLayout = () => {
     <>
       <div
         className={`flex ${
-          isDarkMode ? " bg-bgBlack" : "bg-white"
-        } grid grid-flow-col grid-cols-[10%_90%] gap-3`}
+          isDarkMode ? "bg-bgBlack w-screen" : "bg-[#F5F5FC]"
+        } grid grid-flow-col grid-cols-[10%_80%] md:grid-cols-[10%_85%] lg:grid-cols-[10%_auto] gap-5 bg-bgBlack`}
       >
         <Sidebar />
         <Outlet />

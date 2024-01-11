@@ -109,3 +109,31 @@ export const TaskScheduleDetails = [
     call: Call,
   },
 ];
+
+export const Liads = [
+  {
+    name: "MQL",
+    amount: "3456",
+    title: "Conversion rate",
+    percentage: "51%",
+  },
+
+  {
+    name: "SQL",
+    amount: "2456",
+    title: "Conversion rate",
+    percentage: "38%",
+  },
+
+  {
+    name: "Meeting",
+    amount: "956",
+    title: "Conversion rate",
+    percentage: "59%",
+  },
+
+  {
+    name: "Sells",
+    amount: "567",
+  },
+];

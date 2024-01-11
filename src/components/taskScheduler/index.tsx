@@ -47,22 +47,22 @@ const TaskScheduler = () => {
             disableOnInteraction: false,
           }}
           breakpoints={{
-            0: { slidesPerView: 4 },
+            0: { slidesPerView: 1 },
 
             640: {
-              slidesPerView: 4,
+              slidesPerView: 2,
               spaceBetween: 5,
             },
             768: {
-              slidesPerView: 5,
+              slidesPerView: 3,
               spaceBetween: 40,
             },
             1024: {
-              slidesPerView: 6,
+              slidesPerView: 4,
               spaceBetween: 50,
             },
             1440: {
-              slidesPerView: 6,
+              slidesPerView: 5,
               spaceBetween: 20,
             },
           }}
@@ -75,7 +75,7 @@ const TaskScheduler = () => {
                     key={index}
                     className={`${
                       isDarkMode ? "bg-[#212121] text-white" : "bg-[#F5F5FC]"
-                    } flex flex-col  w-[150px] min-h-[200px] py-4 px-4 rounded-lg justify-between hover:scale-105 transition-all ease-in-out duration-500 cursor-pointer`}
+                    } flex flex-col  w-full md:w-[170px] lg:w-[150px] min-h-[200px] py-4 px-4 rounded-lg justify-between hover:scale-105 transition-all ease-in-out duration-500 cursor-pointer`}
                   >
                     <div className="flex flex-col gap-4">
                       <Typography

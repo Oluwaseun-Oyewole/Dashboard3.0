@@ -31,6 +31,7 @@ type Props = {
   curve?: TCurve | TCurve[];
   showDownloads?: boolean;
   annotations?: any;
+  showLines?: boolean;
 };
 
 export const CustomChart: FC<Props> = ({
@@ -49,6 +50,7 @@ export const CustomChart: FC<Props> = ({
   showDownloads,
   stacked,
   annotations,
+  showLines,
 }) => {
   const { isDarkMode } = useTheme();
 
@@ -56,7 +58,6 @@ export const CustomChart: FC<Props> = ({
     show: true,
     labels: {
       show: yAxisLabel ? true : false,
-      // categories: [0, 100, 200, 300, 400],
       style: {
         colors: "gray",
         fontSize: "13px",
@@ -65,7 +66,7 @@ export const CustomChart: FC<Props> = ({
       },
       formatter: (value: any) => {
         return type !== "line" && type !== "area" && value > 0
-          ? `${value}K`
+          ? `${value}`
           : `${value}`;
       },
     },
@@ -125,24 +126,13 @@ export const CustomChart: FC<Props> = ({
     fill: {
       colors: colors,
     },
-
     annotations: annotations,
-    // title: {
-    //   text: "Dashboard",
-
-    //   style: {
-    //     color: isDarkMode ? "white" : "",
-    //     fonFamily: "Poppins",
-    //     fontWeight: 200,
-    //   },
-
-    // },
-
     legend: {
       show: true,
-      fonFamily: "Poppins",
+
       labels: {
-        colors: "whitesmoke",
+        colors: isDarkMode ? "whitesmoke" : "",
+        fontFamily: "Poppins",
       },
     },
     states: {
@@ -160,7 +150,7 @@ export const CustomChart: FC<Props> = ({
       opacity: 0.3,
       yaxis: {
         lines: {
-          show: true,
+          show: showLines && true,
           colors: "#000",
           style: {
             colors: "red",
@@ -169,7 +159,7 @@ export const CustomChart: FC<Props> = ({
       },
       xaxis: {
         lines: {
-          show: true,
+          show: showLines && true,
         },
         labels: {
           show: false,
@@ -179,7 +169,7 @@ export const CustomChart: FC<Props> = ({
           show: true,
           color: "red",
           height: 1,
-          width: "10%",
+          width: "20%",
           offsetX: 2,
           offsetY: 2,
         },
@@ -255,14 +245,6 @@ export const CustomChart: FC<Props> = ({
               return val + "%";
             },
           },
-          // total: {
-          //   show: false,
-          //   label: "Total",
-          //   color: "#FFF",
-          //   fontSize: "16px",
-          //   fontFamily: "Poppins",
-          //   fontWeight: 600,
-          // },
         },
       },
     },
