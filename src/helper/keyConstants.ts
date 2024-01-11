@@ -2,6 +2,10 @@ import Call from "../assets/svg/call.svg";
 import Check from "../assets/svg/check.svg";
 import Mic from "../assets/svg/mic.svg";
 import Notification from "../assets/svg/notification.svg";
+import ProfileOne from "../assets/svg/profile1.svg";
+import ProfileTwo from "../assets/svg/profile2.svg";
+import ProfileThree from "../assets/svg/profile3.svg";
+import ProfileFour from "../assets/svg/profile4.svg";
 
 type PageTitle = {
   [key: string]: string;
@@ -135,5 +139,148 @@ export const Liads = [
   {
     name: "Sells",
     amount: "567",
+  },
+];
+
+export const Chats = [
+  {
+    name: "Jhon White",
+    image: ProfileOne,
+    body: "Yes, we can do that. Please send me",
+    time: "12.25",
+  },
+  {
+    name: "Marketing Team",
+    image: ProfileTwo,
+    body: "I need more time",
+    time: "17.10",
+  },
+  {
+    name: "Martha Jhonson",
+    image: ProfileOne,
+    body: "Did you do this data",
+    time: "2:00",
+  },
+
+  {
+    name: "Kate Coolin",
+    image: ProfileThree,
+    body: "Yes, I found this Information but",
+    time: "15.04",
+  },
+  {
+    name: "Sam Smith",
+    image: ProfileFour,
+    body: "Did you do this data",
+    time: "15:03",
+  },
+  {
+    name: "Marketing Team",
+    image: ProfileTwo,
+    body: "I need more time",
+    time: "17.10",
+  },
+  {
+    name: "Martha Jhonson",
+    image: ProfileOne,
+    body: "Did you do this data",
+    time: "2:00",
+  },
+
+  {
+    name: "Kate Coolin",
+    image: ProfileThree,
+    body: "Yes, I found this Information but",
+    time: "15.04",
+  },
+  {
+    name: "Jhon White",
+    image: ProfileOne,
+    body: "Yes, we can do that. Please send me",
+    time: "12.25",
+  },
+  {
+    name: "Marketing Team",
+    image: ProfileTwo,
+    body: "I need more time",
+    time: "17.10",
+  },
+  {
+    name: "Martha Jhonson",
+    image: ProfileOne,
+    body: "Did you do this data",
+    time: "2:00",
+  },
+  {
+    name: "Jhon White",
+    image: ProfileOne,
+    body: "Yes, we can do that. Please send me",
+    time: "12.25",
+  },
+  {
+    name: "Marketing Team",
+    image: ProfileTwo,
+    body: "I need more time",
+    time: "17.10",
+  },
+  {
+    name: "Martha Jhonson",
+    image: ProfileOne,
+    body: "Did you do this data",
+    time: "2:00",
+  },
+  {
+    name: "Jhon White",
+    image: ProfileOne,
+    body: "Yes, we can do that. Please send me",
+    time: "12.25",
+  },
+  {
+    name: "Marketing Team",
+    image: ProfileTwo,
+    body: "I need more time",
+    time: "17.10",
+  },
+  {
+    name: "Martha Jhonson",
+    image: ProfileOne,
+    body: "Did you do this data",
+    time: "2:00",
+  },
+  {
+    name: "Jhon White",
+    image: ProfileOne,
+    body: "Yes, we can do that. Please send me",
+    time: "12.25",
+  },
+  {
+    name: "Marketing Team",
+    image: ProfileTwo,
+    body: "I need more time",
+    time: "17.10",
+  },
+  {
+    name: "Martha Jhonson",
+    image: ProfileOne,
+    body: "Did you do this data",
+    time: "2:00",
+  },
+  {
+    name: "Jhon White",
+    image: ProfileOne,
+    body: "Yes, we can do that. Please send me",
+    time: "12.25",
+  },
+  {
+    name: "Marketing Team",
+    image: ProfileTwo,
+    body: "I need more time",
+    time: "17.10",
+  },
+  {
+    name: "Martha Jhonson",
+    image: ProfileOne,
+    body: "Did you do this data",
+    time: "2:00",
   },
 ];

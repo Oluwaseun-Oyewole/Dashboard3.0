@@ -10,3 +10,12 @@
 body {
   font-family: "Poppins", sans-serif;
 }
+
+.ant-tabs-ink-bar {
+  height: 5px;
+  border-bottom: 2px solid orange;
+}
+
+.ant-tabs-nav::before {
+  border-bottom: none !important;
+}

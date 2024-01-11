@@ -9,6 +9,9 @@ export default {
         bgBlackMedium: "#2C2C2C",
         orange: "#F9A825",
       },
+      fontFamily: {
+        Poppins: ["Poppins", "sans-serif"],
+      },
     },
   },
   plugins: [],

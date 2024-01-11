@@ -1,3 +1,4 @@
+import RightMenu from "../../components/menu";
 import TaskScheduler from "../../components/taskScheduler";
 import NHTChart from "./chart";
 import DataVisualization from "./visualizations";
@@ -10,7 +11,9 @@ const Dashboard = () => {
         <NHTChart />
         <DataVisualization />
       </div>
-      <div>Right Menu Screen ecr hjkl ghjkml,</div>
+      <div>
+        <RightMenu />
+      </div>
     </div>
   );
 };
