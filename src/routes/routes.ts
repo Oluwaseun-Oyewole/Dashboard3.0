@@ -4,9 +4,9 @@ export const enum Routes {
   // dashboard
   dashboard = "/app/dashboard",
 
-  analytics = "/app/analytics",
+  analytics = "/#",
   report = "/app/reports",
-  calender = "/app/calender",
-  chat = "/app/chat",
-  play = "/app/play",
+  calender = "/##",
+  chat = "/###",
+  play = "/####",
 }
