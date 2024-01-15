@@ -19,3 +19,17 @@ body {
 .ant-tabs-nav::before {
   border-bottom: none !important;
 }
+.ant-checkbox-input {
+}
+.ant-checkbox-inner {
+  background: grey !important;
+  border: none !important;
+  padding: 8px !important;
+}
+
+.ant-checkbox-inner::after {
+  display: flex !important;
+  padding: 2px !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
