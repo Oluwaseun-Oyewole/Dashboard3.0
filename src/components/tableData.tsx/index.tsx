@@ -48,6 +48,8 @@ function TableData({ row, col, className, selected, onSelect }: ITableData) {
         } ${
           row.name === "Total" ? "font-extrabold" : ""
         } py-2  px-3 text-sm font-normal`,
+        selected && isDarkMode && "bg-bgBlackMedium",
+        selected && !isDarkMode && "bg-white",
         className
       )}
     >

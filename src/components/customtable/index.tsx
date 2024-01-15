@@ -34,21 +34,21 @@ function CustomTable({ cols, rows, isLoading, emptyTableStyle }: ITable) {
     <div className="w-full h-[500px] overflow-scroll">
       <table
         className={classNames(
-          `w-full text-left border-spacing-y-3.5 border-spacing-x-3.5 rounded-lg ${
+          `w-full text-left border-spacing-y-3.5 border-spacing-x-3.5 ${
             isDarkMode ? "bg-bgBlackMedium text-white" : "bg-white"
           }`,
           isLoading ? "animate-pulsed" : ""
         )}
       >
         <thead
-          className={`sticky top-0 left-0 z-50 rounded-2xl ${
+          className={`sticky top-0 left-0 z-50 ${
             isDarkMode ? "bg-bgBlackMedium" : "bg-white"
           }`}
         >
           <tr>
             {cols.map((col, idx) => (
               <th
-                className={classNames("py-5 px-3 text-base font-medium ")}
+                className={classNames("py-5 px-3 text-base font-medium")}
                 key={idx}
               >
                 {col.dataIndex === "checkbox" ? (
