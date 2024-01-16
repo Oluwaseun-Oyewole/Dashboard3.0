@@ -1,3 +1,4 @@
+import DateFilter from "../../components/filter";
 import RightMenu from "../../components/menu";
 import TaskScheduler from "../../components/taskScheduler";
 import NHTChart from "./chart";
@@ -8,6 +9,7 @@ const Dashboard = () => {
     <div className="lg:grid  grid-cols-[70%_auto] gap-4">
       <div className="flex flex-col gap-4 mb-5 overflow-y-scroll">
         <TaskScheduler />
+        <DateFilter onFilter={() => {}} />
         <NHTChart />
         <DataVisualization />
       </div>

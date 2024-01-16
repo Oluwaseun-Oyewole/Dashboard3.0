@@ -12,6 +12,7 @@ import { default as Set, default as Settings } from "../../assets/svg/set.svg";
 import User from "../../assets/svg/users.svg";
 import { CustomChart } from "../../components/chart";
 import CustomTable from "../../components/customtable";
+import DateFilter from "../../components/filter";
 import Typography from "../../components/typography";
 import { useTheme } from "../../context";
 
@@ -366,8 +367,11 @@ const Report = () => {
 
   return (
     <div className="mt-5 mr-5">
+      <DateFilter onFilter={() => {}} />
       <div
-        className={`rounded-lg ${isDarkMode ? "bg-bgBlackMedium" : "bg-white"}`}
+        className={`mt-5 rounded-lg ${
+          isDarkMode ? "bg-bgBlackMedium" : "bg-white"
+        }`}
       >
         <div className={`flex items-center justify-between px-5 py-6 `}>
           <Typography
