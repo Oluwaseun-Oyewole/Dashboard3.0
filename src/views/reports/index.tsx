@@ -1,5 +1,7 @@
 import Dollars from "../../assets/svg/Dollar.svg";
+import Change from "../../assets/svg/change_history_24px.svg";
 import Dropdown from "../../assets/svg/dropdown.svg";
+import Extension from "../../assets/svg/extension_24px.svg";
 import Filter from "../../assets/svg/filter.svg";
 import Forward from "../../assets/svg/forward.svg";
 import Help from "../../assets/svg/help.svg";
@@ -7,6 +9,7 @@ import Location from "../../assets/svg/location.svg";
 import Mail from "../../assets/svg/mail.svg";
 import Others from "../../assets/svg/others.svg";
 import Referral from "../../assets/svg/referral.svg";
+import Save from "../../assets/svg/save_alt_24px.svg";
 import Search from "../../assets/svg/search_24px.svg";
 import { default as Set, default as Settings } from "../../assets/svg/set.svg";
 import User from "../../assets/svg/users.svg";
@@ -367,11 +370,16 @@ const Report = () => {
 
   return (
     <div className="mt-5 mr-5">
-      <DateFilter onFilter={() => {}} />
+      <div className={`grid grid-flow-col justify-between items-center py-5`}>
+        <DateFilter onFilter={() => {}} />
+        <div className="flex gap-2">
+          <img src={Change} alt="change" /> <img src={Extension} alt="extend" />
+          <img src={Search} alt="search" /> <img src={Save} alt="save" />{" "}
+          <img src={Settings} alt="setting" />
+        </div>
+      </div>
       <div
-        className={`mt-5 rounded-lg ${
-          isDarkMode ? "bg-bgBlackMedium" : "bg-white"
-        }`}
+        className={`rounded-lg ${isDarkMode ? "bg-bgBlackMedium" : "bg-white"}`}
       >
         <div className={`flex items-center justify-between px-5 py-6 `}>
           <Typography

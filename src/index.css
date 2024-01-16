@@ -24,7 +24,7 @@ body {
 .ant-checkbox-inner {
   background: grey !important;
   border: none !important;
-  padding: 8px !important;
+  padding: 5px !important;
 }
 
 .ant-checkbox-inner::after {

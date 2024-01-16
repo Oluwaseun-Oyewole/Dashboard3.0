@@ -7,7 +7,7 @@ import {
 } from "antd";
 import { SizeType } from "antd/es/config-provider/SizeContext";
 import { RangePickerProps } from "antd/es/date-picker";
-import dayjs from "dayjs";
+import { Dayjs } from "dayjs";
 import moment from "moment";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -27,9 +27,10 @@ const DateFilter: React.FC<FilterPropType> = ({ onFilter }) => {
   const [value, setValue] = useState("today");
   const [month, setMonth] = useState("");
   const [week, setWeek] = useState("");
+  const [from, setFrom] = useState("");
+  const [to, setTo] = useState("");
   const { isDarkMode } = useTheme();
   const navigate = useNavigate();
-  const today = moment().format(dateFormat);
 
   const radio = [
     { title: "Specific Date ", value: "range" },
@@ -58,26 +59,10 @@ const DateFilter: React.FC<FilterPropType> = ({ onFilter }) => {
     onFilter(date);
     // Update the URL
     const params = new URLSearchParams(location.search);
+    params.delete("start", from);
+    params.delete("end", to);
     params.set("date", date?.date || "");
     navigate(`?${params.toString()}`);
-  };
-
-  const handleChange = (type: "m" | "w", dateString: string) => {
-    const formattedDate = dayjs(dateString).format("YYYY-MM");
-    console.log("params formatted", formattedDate);
-    if (type === "m") {
-      setMonth(formattedDate);
-    } else {
-      setWeek(formattedDate);
-    }
-    if (!month || !week) return;
-    else {
-      // Update the URL with the selected date range
-      const params = new URLSearchParams(location.search);
-      params.set("date", month);
-      //   params.set("date", week);
-      navigate(`?${params.toString()}`);
-    }
   };
 
   const handleMonthChange = (
@@ -88,6 +73,8 @@ const DateFilter: React.FC<FilterPropType> = ({ onFilter }) => {
     setMonth(formattedDate);
     if (!month) return;
     const params = new URLSearchParams(location.search);
+    params.delete("start", from);
+    params.delete("end", to);
     params.set("date", month);
     navigate(`?${params.toString()}`);
   };
@@ -99,9 +86,15 @@ const DateFilter: React.FC<FilterPropType> = ({ onFilter }) => {
     setWeek(dateString);
     if (!week) return;
     const params = new URLSearchParams(location.search);
+    params.delete("start", from);
+    params.delete("end", to);
     params.set("date", week);
     navigate(`?${params.toString()}`);
   };
+
+  useEffect(() => {
+    navigate(`?date=${moment().format(dateFormat)}`);
+  }, []);
 
   useEffect(() => {
     month && handleMonthChange(undefined, month);
@@ -110,6 +103,28 @@ const DateFilter: React.FC<FilterPropType> = ({ onFilter }) => {
   useEffect(() => {
     week && handleWeekChange(undefined, week);
   }, [week]);
+
+  const onRangeChange = (
+    dates: null | (Dayjs | null)[],
+    dateStrings: string[]
+  ) => {
+    if (dates) {
+      setFrom(dateStrings[0]);
+      setTo(dateStrings[1]);
+    }
+    if (!from && !to) return;
+    else {
+      const params = new URLSearchParams(location.search);
+      params.delete("date");
+      params.set("start", from);
+      params.set("end", to);
+      navigate(`?${params.toString()}`);
+    }
+  };
+
+  useEffect(() => {
+    onRangeChange(null, []);
+  }, [from, to]);
 
   return (
     <div>
@@ -139,7 +154,7 @@ const DateFilter: React.FC<FilterPropType> = ({ onFilter }) => {
                 ) : item.value === "range" && value === "range" ? (
                   <DatePicker.RangePicker
                     status="error"
-                    style={{ width: "100%" }}
+                    onChange={onRangeChange}
                   />
                 ) : (
                   item.title
