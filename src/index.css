@@ -24,7 +24,7 @@ body {
 .ant-checkbox-inner {
   background: grey !important;
   border: none !important;
-  padding: 5px !important;
+  padding: 4px !important;
 }
 
 .ant-checkbox-inner::after {
@@ -49,7 +49,17 @@ body {
   flex-direction: row !important;
   align-items: center !important;
   justify-content: center !important;
-  font-family: monospace !important;
+}
+
+@media screen and (max-width: 500px) {
+  .ant-space {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .ant-picker-panels {
+    display: none !important;
+  }
 }
 
 .ant-space > div {

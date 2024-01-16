@@ -369,8 +369,10 @@ const Report = () => {
   };
 
   return (
-    <div className="mt-5 mr-5">
-      <div className={`grid grid-flow-col justify-between items-center py-5`}>
+    <div className={`pt-5 pr-5  ${isDarkMode ? "bg-bgBlack" : "bg-[#F5F5FC]"}`}>
+      <div
+        className={`grid gap-8 lg:gap-0 lg:grid-flow-col justify-between items-center py-5`}
+      >
         <DateFilter onFilter={() => {}} />
         <div className="flex gap-2">
           <img src={Change} alt="change" /> <img src={Extension} alt="extend" />

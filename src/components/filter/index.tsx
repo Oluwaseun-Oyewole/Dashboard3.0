@@ -155,6 +155,7 @@ const DateFilter: React.FC<FilterPropType> = ({ onFilter }) => {
                   <DatePicker.RangePicker
                     status="error"
                     onChange={onRangeChange}
+                    className=""
                   />
                 ) : (
                   item.title
