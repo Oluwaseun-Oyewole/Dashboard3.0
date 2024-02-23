@@ -200,6 +200,7 @@ export const CustomChart: FC<Props> = ({
     },
     colors: colors,
     fontFamily: "Poppins",
+
     plotOptions: {
       fontFamily: "Poppins",
       radialBar: {
